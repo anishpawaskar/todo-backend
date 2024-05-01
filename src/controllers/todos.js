@@ -2,7 +2,12 @@ import { createTodoModel } from "../models/todos.js";
 
 export const createTodoController = async (req, res) => {
   try {
-    const body = { ...req.body };
+    const timeStamp = Date.now();
+    const body = {
+      ...req.body,
+      createdAt: timeStamp,
+      updatedAt: timeStamp,
+    };
     const todo = await createTodoModel(body);
 
     return res

@@ -6,6 +6,8 @@ const todosSchema = mongoose.Schema({
   state: {
     isDeleted: Boolean,
   },
+  createdAt: String,
+  updatedAt: String,
 });
 
 export const TodoModel = mongoose.model("Todos", todosSchema);
